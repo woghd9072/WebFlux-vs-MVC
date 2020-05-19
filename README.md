@@ -8,24 +8,20 @@
   
   ~~~ java
   @RestController
+  @RequestMapping("/api/posts")
   @RequiredArgsConstructor
-  @RequestMapping("/api/articles")
-  public class ArticleController {
+  public class PostController {
 
-    private final ArticleService articleService;
+    private final PostService postService;
 
-    @PostMapping
-    public Mono<ResponseEntity<Article>> createArticle(@RequestBody @Valid Article article, Errors errors, @CurrentMember Member member) {
-        if (errors.hasErrors()) {
-            return Mono.just(ResponseEntity.badRequest().build());
-        }
-        return articleService.create(article, member)
-                .map(saveArticle -> new ResponseEntity<>(saveArticle, HttpStatus.CREATED));
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getPosts(){
+        return ResponseEntity.ok(postService.getPosts());
     }
 
-    @GetMapping
-    public Flux<Article> getAllArticles() {
-        return articleService.getAllArticles();
+    @PostMapping
+    public ResponseEntity<?> registerPost(@RequestBody PostRegisterDto postRegisterDto) {
+        return new ResponseEntity<>(postService.save(postRegisterDto), HttpStatus.CREATED);
     }
   }
   ~~~

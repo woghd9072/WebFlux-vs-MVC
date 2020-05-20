@@ -71,6 +71,20 @@
   - 효율적으로 동작하는 고성능 웹 애플리케이션 개발
   - 서비스간 호출이 많은 마이크로서비스 아키텍처에 적합
   
+### 함수형 WebFlux의 장점
+  - 모든 웹 요청 처리 작업을 명시적인 코드로 작성 가능합니다.
+  - 함수조작을 통한 편리한 구성/추상화에 유리합니다.
+  - 테스트 작성이 편리합니다.(핸들러 로직, 요청 매핑, 리턴값까지 단위 테스트 가능)
+
+### 함수형 WebFlux의 단점
+  - 함수형 스타일의 코드 작성이 편하지 않으면 코드 작성과 이해 모두 어렵습니다.
+  
+### 함수형을 쓰는 이유
+  - 간결하고 조합하기 편한 코드를 작성할 수 있습니다.
+  - 데이터 흐름에 따른 다양한 오퍼레이터가 가능합니다.
+  - 연산을 조합해서 만든 동시성 정보가 노출되지 않는 추상화된 코드를 작성할 수 있습니다.
+  - 데이터 흐름의 속도를 제어할 수 있는 메커니즘을 제공합니다.
+  
 ### WebFlux가 성능이 좋으니 무조건 사용해야 하나?
   ![img](https://user-images.githubusercontent.com/37733264/82406011-7bc25680-9aa0-11ea-9189-b9ef34175c4e.png)
   - Boot1이 MVC이고 Boot2가 WebFlux입니다.
@@ -80,3 +94,4 @@
   - https://www.youtube.com/watch?v=2E_1yb8iLKk&t=455s
   - https://spring.io/guides/gs/reactive-rest-service/
   - https://dzone.com/articles/raw-performance-numbers-spring-boot-2-webflux-vs-s
+  - https://jojoldu.tistory.com/155

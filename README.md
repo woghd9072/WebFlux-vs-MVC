@@ -27,27 +27,6 @@
     }
   }
   ~~~
-  - WebFlux @MVC 방식 예제 코드
-  ~~~ java
-  @RestController
-  @RequiredArgsConstructor
-  @RequestMapping("/api/articles")
-  public class ArticleController {
-    private final ArticleService articleService;
-    @PostMapping
-    public Mono<ResponseEntity<Article>> createArticle(@RequestBody @Valid Article article, Errors errors, @CurrentMember Member member) {
-        if (errors.hasErrors()) {
-            return Mono.just(ResponseEntity.badRequest().build());
-        }
-        return articleService.create(article, member)
-                .map(saveArticle -> new ResponseEntity<>(saveArticle, HttpStatus.CREATED));
-    }
-    @GetMapping
-    public Flux<Article> getAllArticles() {
-        return articleService.getAllArticles();
-    }
-  }
-  ~~~
   - RouterFunction 예제 코드
   ~~~ java
   @Configuration
@@ -88,9 +67,9 @@
   ~~~
   
 ### WebFlux 사용 용도
-  - 비동기-논블로킹 리액티브 개발에 사용
-  - 효율적으로 동작하는 고성능 웹 애플리케이션 개발
-  - 서비스간 호출이 많은 마이크로서비스 아키텍처에 적합
+  - 비동기-논블로킹 리액티브 개발에 사용합니다.
+  - 효율적으로 동작하는 고성능 웹 애플리케이션 개발에 사용합니다.
+  - 서비스간 호출이 많은 마이크로서비스 아키텍처에 적합합니다.
   
 ### 함수형 WebFlux의 장점
   - 모든 웹 요청 처리 작업을 명시적인 코드로 작성 가능합니다.

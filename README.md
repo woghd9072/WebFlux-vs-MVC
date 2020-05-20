@@ -6,6 +6,7 @@
   - WebFlux는 Servlet 기반이 아니기 때문에 HttpServletRequest, HttpServletResponse를 사용하지 않고 이를 추상화한 ServerRequest, ServerResponse를 사용합니다.
   - WebFlux는 동기 방식의 Servlet을 사용하지 않지만 3.1 버전 이상의 비동기-논블로킹 처리 방식을 이용하고, 다른 컨테이너로는 Undertow, Netty가 있습니다.
   
+  - MVC 예제 코드
   ~~~ java
   @RestController
   @RequestMapping("/api/posts")
@@ -25,6 +26,7 @@
     }
   }
   ~~~
+  - RouterFunction 예제 코드
   ~~~ java
   @Configuration
   @RequiredArgsConstructor
@@ -42,6 +44,7 @@
     }
   }
   ~~~
+  - HandlerFunction 예제 코드
   ~~~ java
   @Component
   @RequiredArgsConstructor
@@ -61,6 +64,11 @@
     }
   }
   ~~~
+  
+### WebFlux 사용 용도
+  - 비동기-논블로킹 리액티브 개발에 사용
+  - 효율적으로 동작하는 고성능 웹 애플리케이션 개발
+  - 서비스간 호출이 많은 마이크로서비스 아키텍처에 적합
 
 ### 레퍼런스
   - https://www.youtube.com/watch?v=2E_1yb8iLKk&t=455s

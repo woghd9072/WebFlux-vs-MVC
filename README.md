@@ -27,6 +27,27 @@
     }
   }
   ~~~
+  - WebFlux @MVC 방식 예제 코드
+  ~~~ java
+  @RestController
+  @RequiredArgsConstructor
+  @RequestMapping("/api/articles")
+  public class ArticleController {
+    private final ArticleService articleService;
+    @PostMapping
+    public Mono<ResponseEntity<Article>> createArticle(@RequestBody @Valid Article article, Errors errors, @CurrentMember Member member) {
+        if (errors.hasErrors()) {
+            return Mono.just(ResponseEntity.badRequest().build());
+        }
+        return articleService.create(article, member)
+                .map(saveArticle -> new ResponseEntity<>(saveArticle, HttpStatus.CREATED));
+    }
+    @GetMapping
+    public Flux<Article> getAllArticles() {
+        return articleService.getAllArticles();
+    }
+  }
+  ~~~
   - RouterFunction 예제 코드
   ~~~ java
   @Configuration

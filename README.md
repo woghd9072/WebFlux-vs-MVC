@@ -10,20 +10,20 @@
   - MVC 예제 코드
   ~~~ java
   @RestController
-  @RequestMapping("/api/posts")
+  @RequestMapping("/api/articles")
   @RequiredArgsConstructor
-  public class PostController {
+  public class ArticleController {
 
-    private final PostService postService;
+    private final ArticleService articleService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> getPosts(){
-        return ResponseEntity.ok(postService.getPosts());
+    public ResponseEntity<?> getArticles(){
+        return ResponseEntity.ok(articleService.getArticles());
     }
 
     @PostMapping
-    public ResponseEntity<?> registerPost(@RequestBody PostRegisterDto postRegisterDto) {
-        return new ResponseEntity<>(postService.save(postRegisterDto), HttpStatus.CREATED);
+    public ResponseEntity<?> registerArticle(@RequestBody ArticleRegisterDto articleRegisterDto) {
+        return new ResponseEntity<>(articleService.save(articleRegisterDto), HttpStatus.CREATED);
     }
   }
   ~~~

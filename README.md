@@ -72,8 +72,9 @@
   - 서비스간 호출이 많은 마이크로서비스 아키텍처에 적합
   
 ### WebFlux가 성능이 좋으니 무조건 사용해야 하나?
-  ![img](./사진/img.png)
-  - 많은 요청에서는 WebFlux가 성능이 우수하나, 비교적 적은 요청에서는 MVC, WebFlux 둘다 성능이 비슷비슷합니다. 그러므로 무조건 사용해야 하는 것이 아니라 상황에 맞게 선택해야합니다.
+  ![img](https://user-images.githubusercontent.com/37733264/82406011-7bc25680-9aa0-11ea-9189-b9ef34175c4e.png)
+  - Boot1이 MVC이고 Boot2가 WebFlux입니다.
+  - 위 표와 같이 많은 요청에서는 WebFlux가 성능이 우수하나, 비교적 적은 요청에서는 MVC, WebFlux 둘다 성능이 비슷비슷합니다. 그러므로 무조건 사용해야 하는 것이 아니라 상황에 맞게 선택해야합니다.
 
 ### 레퍼런스
   - https://www.youtube.com/watch?v=2E_1yb8iLKk&t=455s

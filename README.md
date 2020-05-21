@@ -11,11 +11,6 @@
 ### WebFlux 사용 용도
   - 효율적으로 동작하는 고성능 웹 애플리케이션 개발에 사용합니다.
   - ex) 포털 사이트의 메인 페이지
-  
-### WebFlux가 성능이 좋으니 무조건 사용해야 하나?
-  ![img](https://user-images.githubusercontent.com/37733264/82406011-7bc25680-9aa0-11ea-9189-b9ef34175c4e.png)
-  - Boot1이 MVC이고 Boot2가 WebFlux입니다.
-  - 위 표와 같이 많은 요청에서는 WebFlux가 성능이 우수하나, 비교적 적은 요청에서는 MVC, WebFlux 둘다 성능이 비슷비슷합니다. 그러므로 무조건 사용해야 하는 것이 아니라 상황에 맞게 선택해야합니다.
 
 ### MVC와 WebFlux의 코드 
   - MVC 예제 코드
@@ -90,6 +85,11 @@
   - 데이터 흐름에 따른 다양한 오퍼레이터가 가능합니다.
   - 연산을 조합해서 만든 동시성 정보가 노출되지 않는 추상화된 코드를 작성할 수 있습니다.
   - 데이터 흐름의 속도를 제어할 수 있는 메커니즘을 제공합니다.
+
+### WebFlux가 성능이 좋으니 무조건 사용해야 하나?
+  ![img](https://user-images.githubusercontent.com/37733264/82406011-7bc25680-9aa0-11ea-9189-b9ef34175c4e.png)
+  - Boot1이 MVC이고 Boot2가 WebFlux입니다.
+  - 위 표와 같이 많은 요청에서는 WebFlux가 성능이 우수하나, 비교적 적은 요청에서는 MVC, WebFlux 둘다 성능이 비슷비슷합니다. 그러므로 무조건 사용해야 하는 것이 아니라 상황에 맞게 선택해야합니다.
 
 ### 레퍼런스
   - https://www.youtube.com/watch?v=2E_1yb8iLKk&t=455s
